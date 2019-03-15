@@ -9,4 +9,9 @@ class Team extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function strengths()
+    {
+        return $this->hasMany(Strength::class);
+    }
 }

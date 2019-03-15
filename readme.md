@@ -16,7 +16,7 @@ To do:
 - Checkout and `cd project_directory/` to go to the project root directory.
 - `sh ./start.sh`
  
- API base url `http://127.0.0.1`.
+ Project url `http://127.0.0.1`.
  
  ### CheckList
  

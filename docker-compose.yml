@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+    nginx:
+        image: nginx:1.13.9
+        ports:
+            - 80:80
+        volumes:
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        volumes_from:
+            - php
+
+    php:
+        build: ./docker/php/
+        expose:
+            - 9000
+        volumes:
+            - .:/var/www/html
+        links:
+            - mysql
+
+    mysql:
+        image: mysql:8.0.3
+        ports:
+            - 3306:3306
+        volumes:
+            - ~/.backup/mysql/champions_league_simulator:/var/lib/mysql
+            - ./docker/mysql/mysql-custom.cnf:/etc/my.cnf
+        environment:
+            - "MYSQL_ROOT_PASSWORD=secret"
+            - "MYSQL_ROOT_USER=root"
+            - "MYSQL_DATABASE=champions_league_simulator"

@@ -28,4 +28,4 @@ To do:
  - [x] Play all matches 
  - [x] Play weekly matches
  - [x] View Next match
- - [x] Update match score (Click on score in Match Results section to get the editable field)
+ - [x] Update match score (Double Click on score in Match Results section to get the editable field)
